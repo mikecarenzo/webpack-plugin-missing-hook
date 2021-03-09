@@ -14,8 +14,8 @@ module.exports = class WebpackPlugin {
                 name: "DtsBundlerPlugin",
                 state: Compilation.PROCESS_ASSETS_STAGE_OPTIMIZE_INLINE,
             }, (assets) => {
-                console.log("Notice no .d.ts files at processAssets hook:")
-                console.log("--------------------------------------------")
+                console.log("Notice: no .d.ts files at processAssets hook:")
+                console.log("---------------------------------------------")
                 console.log(compilation.getAssets());
             });
 
@@ -23,8 +23,8 @@ module.exports = class WebpackPlugin {
             compilation.hooks.record.tap({
                 name: "DtsBundlerPlugin"
             }, () => {
-                console.log("\nNotice .d.ts files at record hook:")
-                console.log("-----------------------------------")
+                console.log("\nNotice: .d.ts files at record hook:")
+                console.log("------------------------------------")
                 console.log(compilation.getAssets());
             });
 
